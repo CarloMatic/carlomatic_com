@@ -16,7 +16,7 @@ export function ParticleBackground() {
         if (!ctx) return;
 
         let animationFrameId: number;
-        let particles: Particle[] = [];
+        const particles: Particle[] = [];
 
         // Configuration
         const particleCount = 120; // Number of dots (Doubled)
@@ -33,57 +33,28 @@ export function ParticleBackground() {
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
-        // Particle Class
-        class Particle {
-            x: number;
-            y: number;
-            vx: number;
-            vy: number;
-            size: number;
+        // Particle class moved outside
 
-            constructor() {
-                this.x = Math.random() * canvas!.width;
-                this.y = Math.random() * canvas!.height;
-                // Random slow velocity
-                this.vx = (Math.random() - 0.5) * moveSpeed;
-                this.vy = (Math.random() - 0.5) * moveSpeed;
-                this.size = Math.random() * 2 + 1; // Size 1-3px
-            }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-
-                // Bounce off edges (or wrap, bouncing is smoother for lines)
-                if (this.x < 0 || this.x > canvas!.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas!.height) this.vy *= -1;
-            }
-
-            draw() {
-                if (!ctx) return;
-                ctx.fillStyle = particleColor;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
 
         // Initialize
         for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
+            particles.push(new Particle(canvas.width, canvas.height, moveSpeed));
         }
 
         // Animation Loop
         const animate = () => {
+            if (!ctx) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             // Draw and Update Particles
-            particles.forEach((particle, index) => {
-                particle.update();
-                particle.draw();
+            particles.forEach((particle) => {
+                particle.update(canvas.width, canvas.height);
+                particle.draw(ctx, particleColor);
 
                 // Draw Connections
-                for (let j = index + 1; j < particles.length; j++) {
+                for (let j = 0; j < particles.length; j++) {
+                    if (particle === particles[j]) continue;
+
                     const other = particles[j];
                     const dx = particle.x - other.x;
                     const dy = particle.y - other.y;
@@ -117,4 +88,37 @@ export function ParticleBackground() {
             className="absolute inset-0 w-full h-full pointer-events-none z-0"
         />
     );
+}
+
+class Particle {
+    x: number;
+    y: number;
+    vx: number;
+    vy: number;
+    size: number;
+
+    constructor(width: number, height: number, speed: number) {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        // Random slow velocity
+        this.vx = (Math.random() - 0.5) * speed;
+        this.vy = (Math.random() - 0.5) * speed;
+        this.size = Math.random() * 2 + 1; // Size 1-3px
+    }
+
+    update(width: number, height: number) {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Bounce off edges
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+    }
+
+    draw(ctx: CanvasRenderingContext2D, color: string) {
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+    }
 }

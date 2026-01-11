@@ -1,38 +1,29 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
 import { useSearchParams } from 'react-router-dom';
-
-type Language = 'en' | 'de';
-
-interface LanguageContextType {
-    language: Language;
-    setLanguage: (lang: Language) => void;
-    t: (key: string) => string;
-}
-
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+import { LanguageContext, type Language } from './LanguageContextDefinition';
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
     const [searchParams, setSearchParams] = useSearchParams();
-    const [language, setLanguageState] = useState<Language>('en');
 
-    useEffect(() => {
-        // 1. Check Query Param
-        const langParam = searchParams.get('lang');
-        if (langParam === 'de' || langParam === 'en') {
-            setLanguageState(langParam);
-            return;
-        }
+    // Initialize state lazily to avoid effect update
+    const [language, setLanguageState] = useState<Language>(() => {
+        const langParam = new URLSearchParams(window.location.search).get('lang');
+        if (langParam === 'de' || langParam === 'en') return langParam;
 
-        // 2. Check Domain TLD
         const hostname = window.location.hostname;
-        if (hostname.endsWith('.de')) {
-            setLanguageState('de');
-            return;
-        }
+        if (hostname.endsWith('.de')) return 'de';
 
-        // 3. Default to EN
-        setLanguageState('en');
-    }, []);
+        return 'en';
+    });
+
+    // Sync state with URL params if they change externally (back/forward)
+    useEffect(() => {
+        const langParam = searchParams.get('lang');
+        if ((langParam === 'de' || langParam === 'en') && langParam !== language) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            setLanguageState(langParam);
+        }
+    }, [searchParams, language]);
 
     const setLanguage = (lang: Language) => {
         setLanguageState(lang);
@@ -40,7 +31,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     };
 
     const t = (key: string) => {
-        // Simple translation placeholder if needed, mostly used for simple strings
         return key;
     };
 
@@ -51,10 +41,4 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     );
 }
 
-export function useLanguage() {
-    const context = useContext(LanguageContext);
-    if (context === undefined) {
-        throw new Error('useLanguage must be used within a LanguageProvider');
-    }
-    return context;
-}
+// Context only. Hook is in src/hooks/useLanguage.ts

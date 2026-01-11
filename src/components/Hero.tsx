@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Podcast } from 'lucide-react';
 import { ParticleBackground } from './ParticleBackground';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../hooks/useLanguage';
 
 export function Hero() {
     const { language } = useLanguage();

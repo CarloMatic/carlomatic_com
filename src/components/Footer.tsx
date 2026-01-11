@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../hooks/useLanguage';
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
@@ -73,7 +73,7 @@ export function Footer() {
     );
 }
 
-function SocialLink({ href, onClick, icon: Icon, label }: { href?: string; onClick?: () => void; icon: any; label: string }) {
+function SocialLink({ href, onClick, icon: Icon, label }: { href?: string; onClick?: () => void; icon: React.ElementType; label: string }) {
     return (
         <motion.button
             onClick={onClick ? onClick : () => href && window.open(href, '_blank', 'noopener,noreferrer')}
