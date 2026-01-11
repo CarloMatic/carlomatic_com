@@ -23,11 +23,11 @@ export function Imprint() {
                     animate={{ opacity: 1, y: 0 }}
                     className="forma-panel p-8 md:p-16 rounded-3xl border border-gray-200"
                 >
-                    <h1 className="text-4xl font-bold mb-8 uppercase">Impressum</h1>
+                    <h1 className="text-4xl font-bold mb-8 uppercase">Imprint</h1>
 
                     <div className="space-y-8 text-gray-700 leading-relaxed">
                         <section>
-                            <h2 className="text-xl font-bold text-gray-900 mb-2">Angaben gemäß § 5 TMG</h2>
+                            <h2 className="text-xl font-bold text-gray-900 mb-2">Information according to § 5 TMG</h2>
                             <p>
                                 Carlo Matic<br />
                                 c/o Interactive Pioneers GmbH<br />
@@ -38,14 +38,14 @@ export function Imprint() {
                         </section>
 
                         <section>
-                            <h2 className="text-xl font-bold text-gray-900 mb-2">Kontakt</h2>
+                            <h2 className="text-xl font-bold text-gray-900 mb-2">Contact</h2>
                             <p>
-                                Telefon: +49 241 918801
+                                Phone: +49 241 918801
                             </p>
                         </section>
 
                         <section>
-                            <h2 className="text-xl font-bold text-gray-900 mb-2">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+                            <h2 className="text-xl font-bold text-gray-900 mb-2">Responsible for content according to § 55 Abs. 2 RStV</h2>
                             <p>
                                 Carlo Matic<br />
                                 Belvedereallee 5<br />
@@ -54,9 +54,9 @@ export function Imprint() {
                         </section>
 
                         <section>
-                            <h2 className="text-xl font-bold text-gray-900 mb-2">Haftungsausschluss</h2>
+                            <h2 className="text-xl font-bold text-gray-900 mb-2">Disclaimer</h2>
                             <p className="text-sm text-gray-500">
-                                Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+                                Despite careful control of the contents, we do not assume any liability for the contents of external links. The operators of the linked pages are solely responsible for their content.
                             </p>
                         </section>
                     </div>
