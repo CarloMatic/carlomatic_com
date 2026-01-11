@@ -14,6 +14,7 @@ export function Hero() {
             nerdDesc: 'Deep Dives in AI, Crypto, Chips & Global Markets',
             ceoFounder: 'CEO & Founder',
             coFounder: 'Co-Founder',
+            placebranding: 'Aachen Placebranding Evangelist',
             angelInvestor: 'Angel Investor',
             experience: '+15 years experience',
             geek: 'Geek',
@@ -30,6 +31,7 @@ export function Hero() {
             nerdDesc: 'Deep Dives in KI, Krypto, Chips & Globale Märkte',
             ceoFounder: 'CEO & Gründer',
             coFounder: 'Gesellschafter',
+            placebranding: 'Aachen Placebranding Evangelist',
             angelInvestor: 'Angel Investor',
             experience: '+15 Jahre Erfahrung',
             geek: 'Geek',
@@ -138,6 +140,7 @@ export function Hero() {
                     <p className="text-gray-500 leading-relaxed text-base group-hover:text-black transition-colors duration-300">
                         <span className="text-gray-900 font-bold">{content[language].ceoFounder}</span> Interactive Pioneers <br />
                         <span className="text-gray-900 font-bold">{content[language].coFounder}</span> POWER+RADACH <br />
+                        <span className="text-gray-900 font-bold">{content[language].placebranding}</span> <br />
                         <span className="text-gray-900 font-bold">{content[language].angelInvestor}</span> {content[language].experience} <br />
                         <span className="text-gray-900 font-bold">{content[language].geek}</span> & {content[language].efoil}
                     </p>
