@@ -32,19 +32,30 @@ export function BentoGrid() {
               ${venture.size === 'large' ? 'md:col-span-2' : 'md:col-span-1'}
             `}
                     >
+                        {/* Conditional Background Image & Overlay */}
+                        {'image' in venture && (
+                            <>
+                                <div
+                                    className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                                    style={{ backgroundImage: `url('${import.meta.env.BASE_URL}${venture.image}')` }}
+                                />
+                                <div className="absolute inset-0 z-10 bg-white/80 group-hover:bg-white/70 transition-colors duration-300" />
+                            </>
+                        )}
+
                         <div className="relative z-10">
                             <div className="flex justify-between items-start mb-8">
                                 <div className="text-gray-400 group-hover:text-brand-neon transition-colors">
                                     <venture.icon size={32} strokeWidth={1.5} />
                                 </div>
-                                <div className="p-2 bg-gray-50 rounded-full group-hover:bg-brand-neon group-hover:text-white transition-colors">
+                                <div className="p-2 rounded-full border border-transparent text-gray-500 bg-transparent group-hover:border-brand-neon group-hover:text-brand-neon transition-colors">
                                     <ArrowUpRight size={20} />
                                 </div>
                             </div>
 
                             <h3 className="text-2xl font-bold mb-2 text-gray-900">{venture.title}</h3>
                             <p className="text-xs font-bold text-brand-neon mb-4 uppercase tracking-wider">{venture.role}</p>
-                            <p className="text-gray-500 leading-relaxed">
+                            <p className={`${'image' in venture ? 'text-gray-800' : 'text-gray-500'} leading-relaxed`}>
                                 {venture.description}
                             </p>
                         </div>

@@ -1,4 +1,4 @@
-import { Terminal, Globe, Rocket, Mic, Podcast, HardHat, Bot, Users } from 'lucide-react';
+import { Globe, Rocket, Mic, HardHat, Bot, Users } from 'lucide-react';
 
 export const ventures = [
     {
@@ -9,7 +9,8 @@ export const ventures = [
         icon: Globe,
         link: 'https://interactive-pioneers.de',
         size: 'large', // Spans 2 cols
-        color: 'from-blue-500/20 to-purple-500/20'
+        color: 'from-blue-500/20 to-purple-500/20',
+        image: 'ipbackground.jpg'
     },
     {
         id: 'drehturm',
@@ -19,7 +20,8 @@ export const ventures = [
         icon: Globe, // Keeping generic or finding a better one? Globe fits a landmark place. 
         link: 'https://www.drehturm.de',
         size: 'medium',
-        color: 'from-yellow-500/20 to-amber-500/20'
+        color: 'from-yellow-500/20 to-amber-500/20',
+        image: 'drehturm-belvedere.jpeg'
     },
     {
         id: 'construction',

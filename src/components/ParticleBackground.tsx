@@ -19,7 +19,7 @@ export function ParticleBackground() {
         let particles: Particle[] = [];
 
         // Configuration
-        const particleCount = 60; // Number of dots
+        const particleCount = 120; // Number of dots (Doubled)
         const connectionDistance = 150; // Max distance to draw line
         const moveSpeed = 0.2; // Very slow drift
         const particleColor = 'rgba(0, 0, 0, 0.2)'; // Darker grey (was 0.08)

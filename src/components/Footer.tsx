@@ -23,7 +23,12 @@ export function Footer() {
                         <SocialLink href="http://github.com/carlomatic" icon={Github} label="GitHub" />
                         <SocialLink href="https://twitter.com/carlomatic" icon={Twitter} label="Twitter" />
                         <SocialLink
-                            href="mailto:cm@interactive-pioneers.de"
+                            onClick={() => {
+                                const user = 'cm';
+                                const domain = 'interactive-pioneers';
+                                const tld = 'de';
+                                window.location.href = `mailto:${user}@${domain}.${tld}`;
+                            }}
                             icon={Mail}
                             label="Email"
                         />
@@ -41,18 +46,16 @@ export function Footer() {
     );
 }
 
-function SocialLink({ href, icon: Icon, label }: { href: string; icon: any; label: string }) {
+function SocialLink({ href, onClick, icon: Icon, label }: { href?: string; onClick?: () => void; icon: any; label: string }) {
     return (
-        <motion.a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.1, color: '#00f0ff' }}
+        <motion.button
+            onClick={onClick ? onClick : () => href && window.open(href, '_blank', 'noopener,noreferrer')}
+            whileHover={{ scale: 1.1, textShadow: "0 0 8px rgb(255, 255, 255)" }}
             whileTap={{ scale: 0.95 }}
             className="p-3 rounded-full bg-white/5 text-gray-400 hover:bg-white/10 transition-colors"
             aria-label={label}
         >
             <Icon size={20} />
-        </motion.a>
+        </motion.button>
     );
 }
