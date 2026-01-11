@@ -101,7 +101,7 @@ export function Hero() {
                     <p className="text-gray-500 leading-relaxed text-base group-hover:text-black transition-colors duration-300">
                         <span className="text-gray-900 font-bold">CEO & Founder</span> Interactive Pioneers <br />
                         <span className="text-gray-900 font-bold">Co-Founder</span> POWER+RADACH. <br />
-                        <span className="text-gray-900 font-bold">Angel Investor</span> 15 years experience. <br />
+                        <span className="text-gray-900 font-bold">Angel Investor</span> +15 years experience. <br />
                         <span className="text-gray-900 font-bold">Geek</span> & passionate e-foil rider.
                     </p>
                     <div className="mt-auto pt-6 w-full flex justify-between items-center border-t border-gray-100 group-hover:border-gray-300 transition-colors duration-300">
