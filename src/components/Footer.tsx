@@ -1,8 +1,15 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
+    const { language, setLanguage } = useLanguage();
+
+    const labels = {
+        en: { imprint: 'Imprint', privacy: 'Privacy' },
+        de: { imprint: 'Impressum', privacy: 'Datenschutz' }
+    };
 
     return (
         <footer id="contact" className="w-full border-t border-gray-200 relative overflow-hidden bg-brand-acc">
@@ -39,10 +46,24 @@ export function Footer() {
                 <div className="mt-16 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-sans">
                     <p>
                         &copy; {currentYear} Carlo Matic. All rights reserved. <span className="mx-2"> | </span>
-                        <a href="#/imprint" className="hover:text-brand-neon transition-colors">Imprint</a>
+                        <a href="#/imprint" className="hover:text-brand-neon transition-colors">{labels[language].imprint}</a>
                         <span className="mx-2"> | </span>
-                        <a href="#/privacy" className="hover:text-brand-neon transition-colors">Privacy</a>
+                        <a href="#/privacy" className="hover:text-brand-neon transition-colors">{labels[language].privacy}</a>
                     </p>
+
+                    {/* Language Switch */}
+                    <div className="flex gap-2 font-bold text-gray-400">
+                        <button
+                            onClick={() => setLanguage('en')}
+                            className={`transition-colors hover:text-brand-neon ${language === 'en' ? 'text-gray-900' : ''}`}
+                        >EN</button>
+                        <span>|</span>
+                        <button
+                            onClick={() => setLanguage('de')}
+                            className={`transition-colors hover:text-brand-neon ${language === 'de' ? 'text-gray-900' : ''}`}
+                        >DE</button>
+                    </div>
+
                     <p>
                         made with love and <a href="https://github.com/manusco/resonance" target="_blank" rel="noopener noreferrer" className="hover:text-brand-neon transition-colors font-medium">resonance</a>
                     </p>

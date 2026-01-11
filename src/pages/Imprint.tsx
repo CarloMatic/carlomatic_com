@@ -2,9 +2,34 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { ParticleBackground } from '../components/ParticleBackground';
+import { useLanguage } from '../context/LanguageContext';
 
 export function Imprint() {
     const navigate = useNavigate();
+    const { language } = useLanguage();
+
+    const content = {
+        en: {
+            title: 'Imprint',
+            tmgTitle: 'Information according to § 5 TMG',
+            contactTitle: 'Contact',
+            responsibleTitle: 'Responsible for content according to § 55 Abs. 2 RStV',
+            disclaimerTitle: 'Disclaimer',
+            disclaimerText: 'Despite careful control of the contents, we do not assume any liability for the contents of external links. The operators of the linked pages are solely responsible for their content.',
+            germany: 'Germany',
+            phone: 'Phone'
+        },
+        de: {
+            title: 'Impressum',
+            tmgTitle: 'Angaben gemäß § 5 TMG',
+            contactTitle: 'Kontakt',
+            responsibleTitle: 'Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV',
+            disclaimerTitle: 'Haftungsausschluss',
+            disclaimerText: 'Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.',
+            germany: 'Deutschland',
+            phone: 'Telefon'
+        }
+    };
 
     return (
         <main className="w-full min-h-screen bg-brand-acc text-gray-900 relative">
@@ -23,29 +48,29 @@ export function Imprint() {
                     animate={{ opacity: 1, y: 0 }}
                     className="forma-panel p-8 md:p-16 rounded-3xl border border-gray-200"
                 >
-                    <h1 className="text-4xl font-bold mb-8 uppercase">Imprint</h1>
+                    <h1 className="text-4xl font-bold mb-8 uppercase">{content[language].title}</h1>
 
                     <div className="space-y-8 text-gray-700 leading-relaxed">
                         <section>
-                            <h2 className="text-xl font-bold text-gray-900 mb-2">Information according to § 5 TMG</h2>
+                            <h2 className="text-xl font-bold text-gray-900 mb-2">{content[language].tmgTitle}</h2>
                             <p>
                                 Carlo Matic<br />
                                 c/o Interactive Pioneers GmbH<br />
                                 Belvedereallee 5<br />
                                 52070 Aachen<br />
-                                Germany
+                                {content[language].germany}
                             </p>
                         </section>
 
                         <section>
-                            <h2 className="text-xl font-bold text-gray-900 mb-2">Contact</h2>
+                            <h2 className="text-xl font-bold text-gray-900 mb-2">{content[language].contactTitle}</h2>
                             <p>
-                                Phone: +49 241 918801
+                                {content[language].phone}: +49 241 918801
                             </p>
                         </section>
 
                         <section>
-                            <h2 className="text-xl font-bold text-gray-900 mb-2">Responsible for content according to § 55 Abs. 2 RStV</h2>
+                            <h2 className="text-xl font-bold text-gray-900 mb-2">{content[language].responsibleTitle}</h2>
                             <p>
                                 Carlo Matic<br />
                                 Belvedereallee 5<br />
@@ -54,9 +79,9 @@ export function Imprint() {
                         </section>
 
                         <section>
-                            <h2 className="text-xl font-bold text-gray-900 mb-2">Disclaimer</h2>
+                            <h2 className="text-xl font-bold text-gray-900 mb-2">{content[language].disclaimerTitle}</h2>
                             <p className="text-sm text-gray-500">
-                                Despite careful control of the contents, we do not assume any liability for the contents of external links. The operators of the linked pages are solely responsible for their content.
+                                {content[language].disclaimerText}
                             </p>
                         </section>
                     </div>
