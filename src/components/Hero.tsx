@@ -135,9 +135,9 @@ export function Hero() {
                     className="md:col-span-1 md:row-span-1 forma-panel rounded-3xl p-8 flex flex-col justify-center items-start group border border-gray-200 bg-white"
                 >
                     <img
-                        src={`${import.meta.env.BASE_URL}logo-ip.png`}
+                        src={`${import.meta.env.BASE_URL}ip-logo.webp`}
                         alt="Interactive Pioneers Logo"
-                        className="h-10 w-auto mb-8 opacity-70 invert group-hover:invert-0 group-hover:opacity-100 group-hover:brightness-0 transition-all duration-300"
+                        className="h-10 w-auto mb-8 opacity-90 group-hover:opacity-100 transition-all duration-300"
                     />
                     <p className="text-gray-500 leading-relaxed text-base group-hover:text-black transition-colors duration-300">
                         <span className="text-gray-900 font-bold">{content[language].ceoFounder}</span> Interactive Pioneers <br />
