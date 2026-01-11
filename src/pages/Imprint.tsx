@@ -31,7 +31,7 @@ export function Imprint() {
                             <p>
                                 Carlo Matic<br />
                                 c/o Interactive Pioneers GmbH<br />
-                                Wilhemlstraße 12<br />
+                                Belvedereallee 5<br />
                                 52070 Aachen<br />
                                 Germany
                             </p>
@@ -49,7 +49,7 @@ export function Imprint() {
                             <h2 className="text-xl font-bold text-gray-900 mb-2">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
                             <p>
                                 Carlo Matic<br />
-                                Wilhemlstraße 12<br />
+                                Belvedereallee 5<br />
                                 52070 Aachen
                             </p>
                         </section>
