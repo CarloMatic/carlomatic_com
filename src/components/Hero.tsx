@@ -137,7 +137,7 @@ export function Hero() {
                     />
                     <p className="text-gray-500 leading-relaxed text-base group-hover:text-black transition-colors duration-300">
                         <span className="text-gray-900 font-bold">{content[language].ceoFounder}</span> Interactive Pioneers <br />
-                        <span className="text-gray-900 font-bold">{content[language].coFounder}</span> POWER+RADACH. <br />
+                        <span className="text-gray-900 font-bold">{content[language].coFounder}</span> POWER+RADACH <br />
                         <span className="text-gray-900 font-bold">{content[language].angelInvestor}</span> {content[language].experience} <br />
                         <span className="text-gray-900 font-bold">{content[language].geek}</span> & {content[language].efoil}
                     </p>
