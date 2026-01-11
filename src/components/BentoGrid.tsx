@@ -17,7 +17,7 @@ export function BentoGrid() {
                     {language === 'en' ? 'Ventures &' : 'Projekte &'} <span className="text-brand-neon">Insights</span>
                 </h2>
                 <p className="text-gray-500 font-sans text-sm tracking-wide">
-                    {language === 'en' ? 'Curated Projects & Thought Leadership' : 'Kuratierte Projekte & Thought Leadership'}
+                    {language === 'en' ? 'Curated Projects & Thought Leadership' : 'Kuratierte Projekte & Gedanken'}
                 </p>
             </motion.div>
 

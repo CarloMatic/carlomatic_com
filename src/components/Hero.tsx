@@ -34,9 +34,9 @@ export function Hero() {
             experience: '+15 Jahre Erfahrung',
             geek: 'Geek',
             efoil: 'leidenschaftlicher E-Foil Fahrer',
-            basedIn: 'HOMEBASE: DEUTSCHLAND',
+            basedIn: 'BASIS: DEUTSCHLAND',
             ready: 'Lust auf Neues?',
-            letsBuild: 'Lass uns gemeinsam Großes erschaffen',
+            letsBuild: 'Lasst uns gemeinsam Außergewöhnliches schaffen',
             viewWork: 'Pioneers'
         }
     };

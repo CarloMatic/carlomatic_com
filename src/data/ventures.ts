@@ -55,7 +55,7 @@ export const ventures = [
     },
     {
         id: 'speaking',
-        title: 'Public Speaking',
+        title: 'Keynote Speaker',
         role: { en: 'Keynote Speaker', de: 'Keynote Speaker' },
         description: { en: 'Talks on User Experience, Innovation, and the Future of AI.', de: 'Vorträge über User Experience, Innovation und die Zukunft der KI.' },
         icon: Mic,
