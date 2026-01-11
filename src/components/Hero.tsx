@@ -29,7 +29,7 @@ export function Hero() {
             nerdShow: 'On Air / Podcast',
             nerdDesc: 'Deep Dives in KI, Krypto, Chips & Globale Märkte',
             ceoFounder: 'CEO & Gründer',
-            coFounder: 'Co-Founder',
+            coFounder: 'Gesellschafter',
             angelInvestor: 'Angel Investor',
             experience: '+15 Jahre Erfahrung',
             geek: 'Geek',
@@ -37,7 +37,7 @@ export function Hero() {
             basedIn: 'HOMEBASE: DEUTSCHLAND',
             ready: 'Lust auf Neues?',
             letsBuild: 'Lass uns gemeinsam Großes erschaffen',
-            viewWork: 'Projekte'
+            viewWork: 'Pioneers'
         }
     };
 
