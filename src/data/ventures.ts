@@ -25,7 +25,7 @@ export const ventures = [
     },
     {
         id: 'construction',
-        title: 'Construction 4.0',
+        title: 'Smart Building',
         role: { en: 'Thought Leader', de: 'Vordenker' },
         description: { en: 'Bridging the analog gap. "Construction must think IT." Digital Twins & Smart Buildings.', de: 'Brückenschlag zur Digitalisierung. "Bau muss IT mitdenken." Digitale Zwillinge & Smart Buildings.' },
         icon: HardHat,
