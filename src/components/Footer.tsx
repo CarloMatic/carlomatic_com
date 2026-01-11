@@ -35,10 +35,16 @@ export function Footer() {
                     </div>
                 </div>
 
+
                 <div className="mt-16 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-sans">
-                    <p>made with love and <a href="https://github.com/manusco/resonance" target="_blank" rel="noopener noreferrer" className="hover:text-brand-neon transition-colors font-medium">resonance</a> &copy; {currentYear} Carlo Matic. All rights reserved.</p>
                     <p>
-                        System Status: <span className="text-brand-neon font-bold">OPERATIONAL</span>
+                        &copy; {currentYear} Carlo Matic. All rights reserved. <span className="mx-2">|</span>
+                        <a href="#/imprint" className="hover:text-brand-neon transition-colors">Imprint</a>
+                        <span className="mx-2">|</span>
+                        <a href="#/privacy" className="hover:text-brand-neon transition-colors">Privacy</a>
+                    </p>
+                    <p>
+                        made with <a href="https://github.com/manusco/resonance" target="_blank" rel="noopener noreferrer" className="hover:text-brand-neon transition-colors font-medium">resonance</a>
                     </p>
                 </div>
             </div>
