@@ -17,7 +17,7 @@ export function BentoGrid() {
                     {language === 'en' ? 'Ventures &' : 'Projekte &'} <span className="text-brand-neon">Insights</span>
                 </h2>
                 <p className="text-gray-500 font-sans text-sm tracking-wide">
-                    {language === 'en' ? 'Curated Projects & Thought Leadership' : 'Kuratierte Projekte & Gedanken'}
+                    {language === 'en' ? 'Curated Projects & Thought Leadership' : 'Kuratierte Projekte & Thought Leadership'}
                 </p>
             </motion.div>
 
@@ -52,7 +52,15 @@ export function BentoGrid() {
                         <div className="relative z-10">
                             <div className="flex justify-between items-start mb-8">
                                 <div className="text-gray-400 group-hover:text-brand-neon transition-colors">
-                                    <venture.icon size={32} strokeWidth={1.5} />
+                                    {'iconImage' in venture ? (
+                                        <img
+                                            src={`${import.meta.env.BASE_URL}${venture.iconImage}`}
+                                            alt="Logo"
+                                            className="h-8 w-auto opacity-70 group-hover:opacity-100 transition-opacity"
+                                        />
+                                    ) : (
+                                        <venture.icon size={32} strokeWidth={1.5} />
+                                    )}
                                 </div>
                                 <div className="p-2 rounded-full border border-transparent text-gray-500 bg-transparent group-hover:border-brand-neon group-hover:text-brand-neon transition-colors">
                                     <ArrowUpRight size={20} />

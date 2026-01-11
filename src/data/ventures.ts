@@ -10,7 +10,8 @@ export const ventures = [
         link: 'https://interactive-pioneers.de',
         size: 'large', // Spans 2 cols
         color: 'from-blue-500/20 to-purple-500/20',
-        image: 'ipbackground.webp'
+        image: 'ipbackground.webp',
+        iconImage: 'ip-logo.webp'
     },
     {
         id: 'drehturm',
@@ -25,7 +26,7 @@ export const ventures = [
     },
     {
         id: 'construction',
-        title: 'Smart Building',
+        title: 'Construction 4.0',
         role: { en: 'Thought Leader', de: 'Vordenker' },
         description: { en: 'Bridging the analog gap. "Construction must think IT." Digital Twins & Smart Buildings.', de: 'Brückenschlag zur Digitalisierung. "Bau muss IT mitdenken." Digitale Zwillinge & Smart Buildings.' },
         icon: HardHat,
@@ -55,7 +56,7 @@ export const ventures = [
     },
     {
         id: 'speaking',
-        title: 'Keynote Speaker',
+        title: 'Public Speaking',
         role: { en: 'Keynote Speaker', de: 'Keynote Speaker' },
         description: { en: 'Talks on User Experience, Innovation, and the Future of AI.', de: 'Vorträge über User Experience, Innovation und die Zukunft der KI.' },
         icon: Mic,

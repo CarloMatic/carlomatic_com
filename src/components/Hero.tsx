@@ -14,8 +14,6 @@ export function Hero() {
             nerdDesc: 'Deep Dives in AI, Crypto, Chips & Global Markets',
             ceoFounder: 'CEO & Founder',
             coFounder: 'Co-Founder',
-            placebranding: 'Aachen Placebranding',
-            evangelist: 'Evangelist',
             angelInvestor: 'Angel Investor',
             experience: '+15 years experience',
             geek: 'Geek',
@@ -31,17 +29,15 @@ export function Hero() {
             nerdShow: 'On Air / Podcast',
             nerdDesc: 'Deep Dives in KI, Krypto, Chips & Globale Märkte',
             ceoFounder: 'CEO & Gründer',
-            coFounder: 'Gesellschafter',
-            placebranding: 'Aachen Placebranding',
-            evangelist: 'Evangelist',
+            coFounder: 'Co-Founder',
             angelInvestor: 'Angel Investor',
             experience: '+15 Jahre Erfahrung',
             geek: 'Geek',
             efoil: 'leidenschaftlicher E-Foil Fahrer',
-            basedIn: 'BASIS: DEUTSCHLAND',
+            basedIn: 'HOMEBASE: DEUTSCHLAND',
             ready: 'Lust auf Neues?',
-            letsBuild: 'Lasst uns gemeinsam Außergewöhnliches schaffen',
-            viewWork: 'Pioneers'
+            letsBuild: 'Lass uns gemeinsam Großes erschaffen',
+            viewWork: 'Projekte'
         }
     };
 
@@ -135,14 +131,13 @@ export function Hero() {
                     className="md:col-span-1 md:row-span-1 forma-panel rounded-3xl p-8 flex flex-col justify-center items-start group border border-gray-200 bg-white"
                 >
                     <img
-                        src={`${import.meta.env.BASE_URL}ip-logo.webp`}
+                        src={`${import.meta.env.BASE_URL}logo-ip.png`}
                         alt="Interactive Pioneers Logo"
-                        className="h-10 w-auto mb-8 opacity-90 group-hover:opacity-100 transition-all duration-300"
+                        className="h-10 w-auto mb-8 opacity-70 invert group-hover:invert-0 group-hover:opacity-100 group-hover:brightness-0 transition-all duration-300"
                     />
                     <p className="text-gray-500 leading-relaxed text-base group-hover:text-black transition-colors duration-300">
                         <span className="text-gray-900 font-bold">{content[language].ceoFounder}</span> Interactive Pioneers <br />
-                        <span className="text-gray-900 font-bold">{content[language].coFounder}</span> POWER+RADACH <br />
-                        <span className="text-gray-900 font-bold">{content[language].placebranding}</span> {content[language].evangelist} <br />
+                        <span className="text-gray-900 font-bold">{content[language].coFounder}</span> POWER+RADACH. <br />
                         <span className="text-gray-900 font-bold">{content[language].angelInvestor}</span> {content[language].experience} <br />
                         <span className="text-gray-900 font-bold">{content[language].geek}</span> & {content[language].efoil}
                     </p>
