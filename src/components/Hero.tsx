@@ -1,8 +1,45 @@
 import { motion } from 'framer-motion';
 import { Podcast } from 'lucide-react';
 import { ParticleBackground } from './ParticleBackground';
+import { useLanguage } from '../context/LanguageContext';
 
 export function Hero() {
+    const { language } = useLanguage();
+
+    const content = {
+        en: {
+            digitalInnovator: 'Digital Innovator',
+            designingFuture: 'Designing the Future of Interaction',
+            nerdShow: 'On Air / Podcast',
+            nerdDesc: 'Deep Dives in AI, Crypto, Chips & Global Markets.', // Corrected "KI" -> "AI"
+            ceoFounder: 'CEO & Founder',
+            coFounder: 'Co-Founder',
+            angelInvestor: 'Angel Investor',
+            experience: '+15 years experience.',
+            geek: 'Geek',
+            efoil: 'passionate e-foil rider.',
+            basedIn: 'BASED IN GERMANY',
+            ready: 'Ready to collaborate?',
+            letsBuild: "Let's build something extraordinary together.",
+            viewWork: 'View Work'
+        },
+        de: {
+            digitalInnovator: 'Digitaler Innovator',
+            designingFuture: 'Gestaltung der Zukunft der Interaktion',
+            nerdShow: 'On Air / Podcast',
+            nerdDesc: 'Deep Dives in KI, Krypto, Chips & Globale Märkte.',
+            ceoFounder: 'CEO & Gründer',
+            coFounder: 'Co-Founder',
+            angelInvestor: 'Angel Investor',
+            experience: '+15 Jahre Erfahrung.',
+            geek: 'Geek',
+            efoil: 'leidenschaftlicher E-Foil Fahrer.',
+            basedIn: 'HOMEBASE: DEUTSCHLAND',
+            ready: 'Lust auf Neues?',
+            letsBuild: 'Lass uns gemeinsam Großes erschaffen.',
+            viewWork: 'Projekte'
+        }
+    };
 
     return (
         <section className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-brand-acc">
@@ -45,7 +82,7 @@ export function Hero() {
                             </h1>
                         </div>
                         <div className="mt-8">
-                            <p className="text-gray-800 font-mono text-sm uppercase tracking-widest">Designing the Future of Interaction</p>
+                            <p className="text-gray-800 font-mono text-sm uppercase tracking-widest">{content[language].designingFuture}</p>
                         </div>
                     </div>
                 </motion.div>
@@ -77,11 +114,11 @@ export function Hero() {
                     <div className="relative z-20 p-8 flex flex-col justify-between h-full bg-transparent">
                         <div className="flex justify-between items-start">
                             <div className="w-3 h-3 bg-red-500 animate-pulse rounded-full" /> {/* Recording/Live dot */}
-                            <span className="font-mono text-xs text-red-500 uppercase font-bold">On Air / Podcast</span>
+                            <span className="font-mono text-xs text-red-500 uppercase font-bold">{content[language].nerdShow}</span>
                         </div>
                         <div>
                             <h3 className="text-3xl font-bold text-gray-900 mb-1 group-hover/nerd:text-brand-neon transition-colors">Die Nerd Show</h3>
-                            <p className="text-sm text-gray-800 text-balance uppercase tracking-tight leading-relaxed">Deep Dives in KI, Krypto, Chips & Global Markets.</p>
+                            <p className="text-sm text-gray-800 text-balance uppercase tracking-tight leading-relaxed">{content[language].nerdDesc}</p>
                         </div>
                     </div>
                 </motion.div>
@@ -99,13 +136,13 @@ export function Hero() {
                         className="h-10 w-auto mb-8 opacity-70 invert group-hover:invert-0 group-hover:opacity-100 group-hover:brightness-0 transition-all duration-300"
                     />
                     <p className="text-gray-500 leading-relaxed text-base group-hover:text-black transition-colors duration-300">
-                        <span className="text-gray-900 font-bold">CEO & Founder</span> Interactive Pioneers <br />
-                        <span className="text-gray-900 font-bold">Co-Founder</span> POWER+RADACH. <br />
-                        <span className="text-gray-900 font-bold">Angel Investor</span> +15 years experience. <br />
-                        <span className="text-gray-900 font-bold">Geek</span> & passionate e-foil rider.
+                        <span className="text-gray-900 font-bold">{content[language].ceoFounder}</span> Interactive Pioneers <br />
+                        <span className="text-gray-900 font-bold">{content[language].coFounder}</span> POWER+RADACH. <br />
+                        <span className="text-gray-900 font-bold">{content[language].angelInvestor}</span> {content[language].experience} <br />
+                        <span className="text-gray-900 font-bold">{content[language].geek}</span> & {content[language].efoil}
                     </p>
                     <div className="mt-auto pt-6 w-full flex justify-between items-center border-t border-gray-100 group-hover:border-gray-300 transition-colors duration-300">
-                        <span className="text-xs text-gray-400 font-medium tracking-wide group-hover:text-black transition-colors duration-300">BASED IN GERMANY</span>
+                        <span className="text-xs text-gray-400 font-medium tracking-wide group-hover:text-black transition-colors duration-300">{content[language].basedIn}</span>
                     </div>
                 </motion.div>
 
@@ -117,15 +154,15 @@ export function Hero() {
                     className="md:col-span-2 md:row-span-1 forma-panel rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 border border-gray-200 bg-white"
                 >
                     <div>
-                        <h3 className="text-3xl font-bold text-gray-900 uppercase">Ready to collaborate?</h3>
-                        <p className="text-gray-500 mt-2 uppercase tracking-wide text-sm">Let's build something extraordinary together.</p>
+                        <h3 className="text-3xl font-bold text-gray-900 uppercase">{content[language].ready}</h3>
+                        <p className="text-gray-500 mt-2 uppercase tracking-wide text-sm">{content[language].letsBuild}</p>
                     </div>
                     <div className="flex gap-4">
                         <button
                             onClick={() => window.open('https://interactive-pioneers.de', '_blank', 'noopener,noreferrer')}
                             className="px-8 py-4 bg-brand-neon text-white font-bold hover:bg-gray-900 transition-colors uppercase tracking-widest text-xs rounded-full shadow-lg shadow-brand-neon/30 hover:shadow-none"
                         >
-                            View Work
+                            {content[language].viewWork}
                         </button>
                         <button
                             onClick={() => window.open('https://linkedin.com/in/carlomatic', '_blank', 'noopener,noreferrer')}

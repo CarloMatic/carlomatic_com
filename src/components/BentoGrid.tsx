@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { ventures } from '../data/ventures';
+import { useLanguage } from '../context/LanguageContext';
 
 export function BentoGrid() {
+    const { language } = useLanguage();
     return (
         <section id="ventures" className="py-24 px-4 w-full max-w-7xl mx-auto relative z-10">
             <motion.div
@@ -11,8 +13,12 @@ export function BentoGrid() {
                 viewport={{ once: true }}
                 className="mb-12"
             >
-                <h2 className="text-4xl font-bold tracking-tight mb-2 text-gray-900">Ventures & <span className="text-brand-neon">Insights</span></h2>
-                <p className="text-gray-500 font-sans text-sm tracking-wide">Curated Projects & Thought Leadership</p>
+                <h2 className="text-4xl font-bold tracking-tight mb-2 text-gray-900">
+                    {language === 'en' ? 'Ventures &' : 'Projekte &'} <span className="text-brand-neon">Insights</span>
+                </h2>
+                <p className="text-gray-500 font-sans text-sm tracking-wide">
+                    {language === 'en' ? 'Curated Projects & Thought Leadership' : 'Kuratierte Projekte & Thought Leadership'}
+                </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -54,9 +60,9 @@ export function BentoGrid() {
                             </div>
 
                             <h3 className="text-2xl font-bold mb-2 text-gray-900">{venture.title}</h3>
-                            <p className="text-xs font-bold text-brand-neon mb-4 uppercase tracking-wider">{venture.role}</p>
+                            <p className="text-xs font-bold text-brand-neon mb-4 uppercase tracking-wider">{venture.role[language]}</p>
                             <p className={`${'image' in venture ? 'text-gray-800' : 'text-gray-500'} leading-relaxed`}>
-                                {venture.description}
+                                {venture.description[language]}
                             </p>
                         </div>
                     </motion.a>
