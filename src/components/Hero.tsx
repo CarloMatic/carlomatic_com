@@ -21,7 +21,7 @@ export function Hero() {
                     {/* Background Image */}
                     <div
                         className="absolute inset-0 z-0 bg-cover bg-center"
-                        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}Profilbild.jpeg')` }}
+                        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}Profilbild.webp')` }}
                     />
 
                     {/* White Overlay (80%) */}
@@ -30,7 +30,7 @@ export function Hero() {
                     {/* Profile Picture (Top Right) - Explicit z-30 to ensure visibility */}
                     <div className="absolute top-8 right-8 md:top-12 md:right-12 z-30">
                         <img
-                            src={`${import.meta.env.BASE_URL}carlo-linkedin.jpeg`}
+                            src={`${import.meta.env.BASE_URL}carlo-linkedin.webp`}
                             alt="Carlo Matic"
                             className="w-44 h-44 rounded-full border border-gray-100 shadow-sm object-cover"
                         />
@@ -62,7 +62,7 @@ export function Hero() {
                     {/* Background Image */}
                     <div
                         className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover/nerd:scale-105"
-                        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}dienerdshow.jpg')` }}
+                        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}dienerdshow.webp')` }}
                     />
 
                     {/* White Overlay (80%) */}

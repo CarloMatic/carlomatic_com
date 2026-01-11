@@ -10,7 +10,7 @@ export const ventures = [
         link: 'https://interactive-pioneers.de',
         size: 'large', // Spans 2 cols
         color: 'from-blue-500/20 to-purple-500/20',
-        image: 'ipbackground.jpg'
+        image: 'ipbackground.webp'
     },
     {
         id: 'drehturm',
@@ -21,7 +21,7 @@ export const ventures = [
         link: 'https://www.drehturm.de',
         size: 'medium',
         color: 'from-yellow-500/20 to-amber-500/20',
-        image: 'drehturm-belvedere.jpeg'
+        image: 'drehturm-belvedere.webp'
     },
     {
         id: 'construction',
