@@ -40,8 +40,7 @@ export function Imprint() {
                         <section>
                             <h2 className="text-xl font-bold text-gray-900 mb-2">Kontakt</h2>
                             <p>
-                                Telefon: +49 (0) 241 510000 0<br />
-                                E-Mail: cm@interactive-pioneers.de
+                                Telefon: +49 241 918801
                             </p>
                         </section>
 
