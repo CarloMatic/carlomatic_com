@@ -31,7 +31,7 @@ export function Hero() {
                     <div className="absolute top-8 right-8 md:top-12 md:right-12 z-30">
                         <img
                             src={`${import.meta.env.BASE_URL}carlo-linkedin.webp`}
-                            alt="Carlo Matic"
+                            alt="Carlo Matic - Digital Innovator & CEO"
                             className="w-44 h-44 rounded-full border border-gray-100 shadow-sm object-cover"
                         />
                     </div>
