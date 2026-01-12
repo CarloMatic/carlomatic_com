@@ -12,7 +12,7 @@ export function Hero() {
     const content = {
         en: {
             digitalInnovator: 'Digital Innovator',
-            designingFuture: 'Designing the Future of Interaction',
+            designingFuture: 'Designing the Future of Interaction and Brands',
             nerdShow: 'On Air / Podcast',
             nerdDesc: 'Deep Dives in AI, Crypto, Chips & Global Markets',
             ceoFounder: 'CEO & Founder',
@@ -29,7 +29,7 @@ export function Hero() {
         },
         de: {
             digitalInnovator: 'Digitaler Innovator',
-            designingFuture: 'Gestaltung der Zukunft der Interaktion',
+            designingFuture: 'Gestaltung der Zukunft der Interaktion und Marken',
             nerdShow: 'On Air / Podcast',
             nerdDesc: 'Deep Dives in KI, Krypto, Chips & Globale Märkte',
             ceoFounder: 'CEO & Gründer',
