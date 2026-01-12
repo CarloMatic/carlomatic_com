@@ -49,17 +49,17 @@ export function Hero() {
             {/* Tablet: 2 cols | Desktop: 3 cols */}
             {/* Height: Auto on tablet/mobile, Fixed 600px on Desktop to maintain bento rigidity */}
             {/* Main Grid Container - Bento Style with Gaps */}
-            {/* Tablet: 12 col grid for hybrid layouts (Row 1: 8/4, Row 2: 6/6) */}
-            {/* Desktop: 3 col grid (standard) */}
-            {/* Height: Auto on tablet/mobile, Fixed 600px on Desktop to maintain bento rigidity */}
-            <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-12 xl:grid-cols-3 xl:grid-rows-2 h-auto xl:h-[600px] z-10 gap-6">
+            {/* Tablet & Desktop: 12 col grid for maximum flexibility */}
+            {/* Row 1 Tablet: 8/4 | Row 1 Desktop: 8/4 */}
+            {/* Row 2 Tablet: 6/6 | Row 2 Desktop: 4/8 */}
+            <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-12 xl:grid-rows-2 h-auto xl:h-[600px] z-10 gap-6">
 
                 {/* 1. Identity Card (Large, Top Left) */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5 }}
-                    className="md:col-span-8 xl:col-span-2 xl:row-span-1 forma-panel rounded-3xl relative border border-gray-200 overflow-hidden min-h-[400px] md:min-h-[450px]"
+                    className="md:col-span-8 xl:col-span-8 xl:row-span-1 forma-panel rounded-3xl relative border border-gray-200 overflow-hidden min-h-[400px] md:min-h-[450px] xl:min-h-0"
                 >
                     {/* Background Image - Optimized for LCP */}
                     <img
@@ -102,7 +102,7 @@ export function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="md:col-span-4 xl:col-span-1 xl:row-span-1 forma-panel rounded-3xl relative border border-gray-200 cursor-pointer group/nerd overflow-hidden min-h-[300px]"
+                    className="md:col-span-4 xl:col-span-4 xl:row-span-1 forma-panel rounded-3xl relative border border-gray-200 cursor-pointer group/nerd overflow-hidden min-h-[300px] xl:min-h-0"
                     onClick={() => window.open('https://www.dienerdshow.de', '_blank', 'noopener,noreferrer')}
                 >
                     {/* Background Image */}
@@ -137,7 +137,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="md:col-span-6 xl:col-span-1 xl:row-span-1 forma-panel rounded-3xl p-8 flex flex-col justify-center items-start group border border-gray-200 bg-white min-h-[300px]"
+                    className="md:col-span-6 xl:col-span-4 xl:row-span-1 forma-panel rounded-3xl p-8 flex flex-col justify-center items-start group border border-gray-200 bg-white min-h-[300px] xl:min-h-0"
                 >
                     <img
                         src={`${import.meta.env.BASE_URL}logo-ip.png`}
@@ -160,7 +160,7 @@ export function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="md:col-span-6 xl:col-span-2 xl:row-span-1 forma-panel rounded-3xl p-8 md:p-12 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-6 border border-gray-200 bg-white min-h-[300px]"
+                    className="md:col-span-6 xl:col-span-8 xl:row-span-1 forma-panel rounded-3xl p-8 md:p-12 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-6 border border-gray-200 bg-white min-h-[300px] xl:min-h-0"
                 >
                     <div>
                         <h3 className="text-3xl font-bold text-gray-900 uppercase">{content[language].ready}</h3>
