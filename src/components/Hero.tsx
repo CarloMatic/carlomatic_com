@@ -72,7 +72,7 @@ export function Hero() {
                         <img
                             src={`${import.meta.env.BASE_URL}carlo-linkedin.webp`}
                             alt="Carlo Matic - Digital Innovator & CEO"
-                            className="w-44 h-44 rounded-full border border-gray-100 shadow-sm object-cover"
+                            className="w-24 h-24 md:w-44 md:h-44 rounded-full border border-gray-100 shadow-sm object-cover"
                         />
                     </div>
 
