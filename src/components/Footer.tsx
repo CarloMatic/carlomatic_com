@@ -35,7 +35,7 @@ export function Footer() {
                         <SocialLink href="https://linkedin.com/in/carlomatic" icon={Linkedin} label="LinkedIn" />
                         <SocialLink href="https://www.instagram.com/carlomatic/" icon={Instagram} label="Instagram" />
                         <SocialLink href="https://www.facebook.com/carlo.matic78" icon={Facebook} label="Facebook" />
-                        <SocialLink href="https://x.com/carlomatic" icon={XLogo} label="X (Twitter)" />
+                        <SocialLink href="https://x.com/carlo_matic" icon={XLogo} label="X (Twitter)" />
                         <SocialLink
                             onClick={() => {
                                 const user = 'cm';
