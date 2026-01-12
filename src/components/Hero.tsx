@@ -81,7 +81,7 @@ export function Hero() {
                         <div>
                             <h2 className="text-xl md:text-2xl font-light text-gray-800 tracking-wide mb-2 uppercase">Digital <span className="text-gray-900 font-medium">Innovator</span></h2>
                             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-gray-900 uppercase">
-                                Carlo <span className="text-brand-neon">Matic</span>
+                                Carlo <br className="xl:hidden" /> <span className="text-brand-neon">Matic</span>
                             </h1>
                         </div>
                         <div className="mt-8">
