@@ -59,7 +59,7 @@ export function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5 }}
-                    className="md:col-span-8 xl:col-span-8 xl:row-span-1 forma-panel rounded-3xl relative border border-gray-200 overflow-hidden min-h-[400px] md:min-h-[450px] xl:min-h-0"
+                    className="md:col-span-8 xl:col-span-8 xl:row-span-1 forma-panel rounded-3xl relative border border-gray-200 overflow-hidden min-h-[350px] md:min-h-[400px] xl:min-h-0"
                 >
                     {/* Background Image - Optimized for LCP */}
                     <img
@@ -102,7 +102,7 @@ export function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="md:col-span-4 xl:col-span-4 xl:row-span-1 forma-panel rounded-3xl relative border border-gray-200 cursor-pointer group/nerd overflow-hidden min-h-[300px] xl:min-h-0"
+                    className="md:col-span-4 xl:col-span-4 xl:row-span-1 forma-panel rounded-3xl relative border border-gray-200 cursor-pointer group/nerd overflow-hidden min-h-[200px] xl:min-h-0"
                     onClick={() => window.open('https://www.dienerdshow.de', '_blank', 'noopener,noreferrer')}
                 >
                     {/* Background Image */}
