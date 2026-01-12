@@ -76,19 +76,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                                     ))}
                                 </div>
 
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ delay: 0.3 }}
-                                    className="pt-6"
-                                >
-                                    <img
-                                        src={`${import.meta.env.BASE_URL}signature.png`}
-                                        alt="Carlo Matic Signature"
-                                        className="h-12 opacity-50"
-                                        onError={(e) => e.currentTarget.style.display = 'none'} // Hide if no signature image yet
-                                    />
-                                </motion.div>
+                                {/* Signature removed */}
                             </div>
                         </div>
                     </motion.div>
