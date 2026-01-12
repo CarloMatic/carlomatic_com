@@ -8,5 +8,5 @@ export default defineConfig({
     filename: './dist/stats.html',
     open: false
   })],
-  base: './',
+  base: '/carlomatic_com/',
 })
