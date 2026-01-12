@@ -149,7 +149,7 @@ export function Hero() {
                         className="forma-panel rounded-3xl p-8 flex flex-col justify-center items-start group border border-gray-200 bg-white min-h-[300px] xl:min-h-0 cursor-pointer relative"
                     >
                         {/* Interactive Hint */}
-                        <div className="absolute top-6 right-6 transition-all duration-300 p-2 rounded-full border border-transparent group-hover:border-brand-neon text-gray-300 group-hover:text-brand-neon">
+                        <div className="absolute top-6 right-6 transition-all duration-300 p-2 rounded-full border border-transparent group-hover:border-brand-neon text-gray-400 group-hover:text-brand-neon">
                             <ArrowUpRight size={20} />
                         </div>
 
