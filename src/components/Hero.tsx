@@ -97,7 +97,6 @@ export function Hero() {
                 </motion.div>
 
                 {/* 2. Status/Social Card (Small, Top Right) */}
-                {/* 2. Status/Social Card (Small, Top Right) -> Die Nerd Show */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -132,56 +131,61 @@ export function Hero() {
                     </div>
                 </motion.div>
 
-                {/* 3. Bio Card (Medium, Bottom Left) */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="md:col-span-6 xl:col-span-5 xl:row-span-1 forma-panel rounded-3xl p-8 flex flex-col justify-center items-start group border border-gray-200 bg-white min-h-[300px] xl:min-h-0"
-                >
-                    <img
-                        src={`${import.meta.env.BASE_URL}logo-ip.png`}
-                        alt="Interactive Pioneers Logo"
-                        className="h-10 w-auto mb-8 opacity-70 invert group-hover:invert-0 group-hover:opacity-100 group-hover:brightness-0 transition-all duration-300"
-                    />
-                    <p className="text-gray-500 leading-relaxed text-base group-hover:text-black transition-colors duration-300">
-                        <span className="text-gray-900 font-bold">{content[language].ceoFounder}</span> Interactive Pioneers <br />
-                        <span className="text-gray-900 font-bold">{content[language].coFounder}</span> POWER+RADACH <br />
-                        <span className="text-gray-900 font-bold">{content[language].angelInvestor}</span> {content[language].experience} <br />
-                        <span className="text-gray-900 font-bold">{content[language].geek}</span> & {content[language].efoil}
-                    </p>
-                    <div className="mt-auto pt-6 w-full flex justify-between items-center border-t border-gray-100 group-hover:border-gray-300 transition-colors duration-300">
-                        <span className="text-xs text-gray-400 font-medium tracking-wide group-hover:text-black transition-colors duration-300">{content[language].basedIn}</span>
-                    </div>
-                </motion.div>
+                {/* ROW 2 Container - Custom Grid for Precise Bio/Action Split */}
+                <div className="md:col-span-12 xl:col-span-12 xl:row-span-1 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[36%_1fr] gap-6">
 
-                {/* 4. Action Card (Medium/Large, Bottom Right) */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="md:col-span-6 xl:col-span-7 xl:row-span-1 forma-panel rounded-3xl p-8 md:p-12 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-6 border border-gray-200 bg-white min-h-[300px] xl:min-h-0"
-                >
-                    <div>
-                        <h3 className="text-3xl font-bold text-gray-900 uppercase">{content[language].ready}</h3>
-                        <p className="text-gray-500 mt-2 uppercase tracking-wide text-sm">{content[language].letsBuild}</p>
-                    </div>
-                    {/* Buttons stacked on tablet (flex-col), inline on desktop (xl:flex-row) */}
-                    <div className="flex flex-col xl:flex-row gap-4 w-full xl:w-auto">
-                        <button
-                            onClick={() => window.open('https://interactive-pioneers.de', '_blank', 'noopener,noreferrer')}
-                            className="px-8 py-4 bg-brand-neon text-white font-bold hover:bg-gray-900 transition-colors uppercase tracking-widest text-xs rounded-full shadow-lg shadow-brand-neon/30 hover:shadow-none w-full xl:w-auto text-center"
-                        >
-                            {content[language].viewWork}
-                        </button>
-                        <button
-                            onClick={() => window.open('https://linkedin.com/in/carlomatic', '_blank', 'noopener,noreferrer')}
-                            className="px-8 py-4 border border-gray-300 text-gray-900 font-medium hover:bg-gray-900 hover:text-white transition-colors uppercase tracking-widest text-xs rounded-full w-full xl:w-auto text-center"
-                        >
-                            LinkedIn
-                        </button>
-                    </div>
-                </motion.div>
+                    {/* 3. Bio Card (Medium, Bottom Left) */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="forma-panel rounded-3xl p-8 flex flex-col justify-center items-start group border border-gray-200 bg-white min-h-[300px] xl:min-h-0"
+                    >
+                        <img
+                            src={`${import.meta.env.BASE_URL}logo-ip.png`}
+                            alt="Interactive Pioneers Logo"
+                            className="h-10 w-auto mb-8 opacity-70 invert group-hover:invert-0 group-hover:opacity-100 group-hover:brightness-0 transition-all duration-300"
+                        />
+                        <p className="text-gray-500 leading-relaxed text-base group-hover:text-black transition-colors duration-300">
+                            <span className="text-gray-900 font-bold">{content[language].ceoFounder}</span> Interactive Pioneers <br />
+                            <span className="text-gray-900 font-bold">{content[language].coFounder}</span> POWER+RADACH <br />
+                            <span className="text-gray-900 font-bold">{content[language].angelInvestor}</span> {content[language].experience} <br />
+                            <span className="text-gray-900 font-bold">{content[language].geek}</span> & {content[language].efoil}
+                        </p>
+                        <div className="mt-auto pt-6 w-full flex justify-between items-center border-t border-gray-100 group-hover:border-gray-300 transition-colors duration-300">
+                            <span className="text-xs text-gray-400 font-medium tracking-wide group-hover:text-black transition-colors duration-300">{content[language].basedIn}</span>
+                        </div>
+                    </motion.div>
+
+                    {/* 4. Action Card (Medium/Large, Bottom Right) */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className="forma-panel rounded-3xl p-8 md:p-12 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-6 border border-gray-200 bg-white min-h-[300px] xl:min-h-0"
+                    >
+                        <div>
+                            <h3 className="text-3xl font-bold text-gray-900 uppercase">{content[language].ready}</h3>
+                            <p className="text-gray-500 mt-2 uppercase tracking-wide text-sm">{content[language].letsBuild}</p>
+                        </div>
+                        {/* Buttons stacked on tablet (flex-col), inline on desktop (xl:flex-row) */}
+                        <div className="flex flex-col xl:flex-row gap-4 w-full xl:w-auto">
+                            <button
+                                onClick={() => window.open('https://interactive-pioneers.de', '_blank', 'noopener,noreferrer')}
+                                className="px-8 py-4 bg-brand-neon text-white font-bold hover:bg-gray-900 transition-colors uppercase tracking-widest text-xs rounded-full shadow-lg shadow-brand-neon/30 hover:shadow-none w-full xl:w-auto text-center"
+                            >
+                                {content[language].viewWork}
+                            </button>
+                            <button
+                                onClick={() => window.open('https://linkedin.com/in/carlomatic', '_blank', 'noopener,noreferrer')}
+                                className="px-8 py-4 border border-gray-300 text-gray-900 font-medium hover:bg-gray-900 hover:text-white transition-colors uppercase tracking-widest text-xs rounded-full w-full xl:w-auto text-center"
+                            >
+                                LinkedIn
+                            </button>
+                        </div>
+                    </motion.div>
+
+                </div>
 
             </div>
         </section>
