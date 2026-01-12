@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Podcast } from 'lucide-react';
+import { Podcast, ArrowUpRight } from 'lucide-react';
 import { ParticleBackground } from './ParticleBackground';
 import { useLanguage } from '../hooks/useLanguage';
+import { AboutModal } from './AboutModal';
 
 export function Hero() {
     const { language } = useLanguage();
+    const [isAboutOpen, setIsAboutOpen] = useState(false);
 
     const content = {
         en: {
@@ -21,7 +24,8 @@ export function Hero() {
             basedIn: 'BASED IN GERMANY',
             ready: 'Ready to collaborate?',
             letsBuild: "Let's build something extraordinary together",
-            viewWork: 'View Work'
+            viewWork: 'View Work',
+            more: 'More'
         },
         de: {
             digitalInnovator: 'Digitaler Innovator',
@@ -37,13 +41,15 @@ export function Hero() {
             basedIn: 'HOMEBASE: DEUTSCHLAND',
             ready: 'Lust auf Neues?',
             letsBuild: 'Lass uns gemeinsam Großes erschaffen',
-            viewWork: 'Projekte'
+            viewWork: 'Projekte',
+            more: 'Mehr'
         }
     };
 
     return (
         <section className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-brand-acc">
             <ParticleBackground />
+            <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
 
             {/* Main Grid Container - Bento Style with Gaps */}
             {/* Tablet: 2 cols | Desktop: 3 cols */}
@@ -139,8 +145,14 @@ export function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="forma-panel rounded-3xl p-8 flex flex-col justify-center items-start group border border-gray-200 bg-white min-h-[300px] xl:min-h-0"
+                        onClick={() => setIsAboutOpen(true)}
+                        className="forma-panel rounded-3xl p-8 flex flex-col justify-center items-start group border border-gray-200 bg-white min-h-[300px] xl:min-h-0 cursor-pointer relative"
                     >
+                        {/* Interactive Hint */}
+                        <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity text-brand-neon">
+                            <ArrowUpRight size={24} />
+                        </div>
+
                         <img
                             src={`${import.meta.env.BASE_URL}logo-ip.png`}
                             alt="Interactive Pioneers Logo"
@@ -154,6 +166,7 @@ export function Hero() {
                         </p>
                         <div className="mt-auto pt-6 w-full flex justify-between items-center border-t border-gray-100 group-hover:border-gray-300 transition-colors duration-300">
                             <span className="text-xs text-gray-400 font-medium tracking-wide group-hover:text-black transition-colors duration-300">{content[language].basedIn}</span>
+                            <span className="text-xs text-brand-neon font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">{content[language].more}</span>
                         </div>
                     </motion.div>
 
