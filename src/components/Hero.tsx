@@ -17,7 +17,7 @@ export function Hero() {
             angelInvestor: 'Angel Investor',
             experience: '+15 years experience',
             geek: 'Geek',
-            efoil: 'passionate e-foil rider',
+            efoil: 'e-foiler, LEICAner, Thailand-Fan',
             basedIn: 'BASED IN GERMANY',
             ready: 'Ready to collaborate?',
             letsBuild: "Let's build something extraordinary together",
@@ -33,7 +33,7 @@ export function Hero() {
             angelInvestor: 'Angel Investor',
             experience: '+15 Jahre Erfahrung',
             geek: 'Geek',
-            efoil: 'leidenschaftlicher E-Foil Fahrer',
+            efoil: 'e-foiler, LEICAner, Thailand-Fan',
             basedIn: 'HOMEBASE: DEUTSCHLAND',
             ready: 'Lust auf Neues?',
             letsBuild: 'Lass uns gemeinsam Großes erschaffen',
@@ -51,7 +51,7 @@ export function Hero() {
             {/* Main Grid Container - Bento Style with Gaps */}
             {/* Tablet & Desktop: 12 col grid for maximum flexibility */}
             {/* Row 1 Tablet: 8/4 | Row 1 Desktop: 8/4 */}
-            {/* Row 2 Tablet: 6/6 | Row 2 Desktop: 4/8 */}
+            {/* Row 2 Tablet: 6/6 | Row 2 Desktop: 5/7 (Expanded from 4/8 to fit longer bio text) */}
             <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-12 xl:grid-rows-2 h-auto xl:h-[600px] z-10 gap-6">
 
                 {/* 1. Identity Card (Large, Top Left) */}
@@ -137,7 +137,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="md:col-span-6 xl:col-span-4 xl:row-span-1 forma-panel rounded-3xl p-8 flex flex-col justify-center items-start group border border-gray-200 bg-white min-h-[300px] xl:min-h-0"
+                    className="md:col-span-6 xl:col-span-5 xl:row-span-1 forma-panel rounded-3xl p-8 flex flex-col justify-center items-start group border border-gray-200 bg-white min-h-[300px] xl:min-h-0"
                 >
                     <img
                         src={`${import.meta.env.BASE_URL}logo-ip.png`}
@@ -160,7 +160,7 @@ export function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="md:col-span-6 xl:col-span-8 xl:row-span-1 forma-panel rounded-3xl p-8 md:p-12 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-6 border border-gray-200 bg-white min-h-[300px] xl:min-h-0"
+                    className="md:col-span-6 xl:col-span-7 xl:row-span-1 forma-panel rounded-3xl p-8 md:p-12 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-6 border border-gray-200 bg-white min-h-[300px] xl:min-h-0"
                 >
                     <div>
                         <h3 className="text-3xl font-bold text-gray-900 uppercase">{content[language].ready}</h3>
