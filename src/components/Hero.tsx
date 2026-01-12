@@ -55,10 +55,13 @@ export function Hero() {
                     transition={{ duration: 0.5 }}
                     className="md:col-span-2 md:row-span-1 forma-panel rounded-3xl relative border border-gray-200 overflow-hidden"
                 >
-                    {/* Background Image */}
-                    <div
-                        className="absolute inset-0 z-0 bg-cover bg-center"
-                        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}Profilbild.webp')` }}
+                    {/* Background Image - Optimized for LCP */}
+                    <img
+                        src={`${import.meta.env.BASE_URL}Profilbild.webp`}
+                        alt=""
+                        className="absolute inset-0 z-0 w-full h-full object-cover"
+                        fetchPriority="high" // Critical for LCP
+                        loading="eager"
                     />
 
                     {/* White Overlay (80%) */}

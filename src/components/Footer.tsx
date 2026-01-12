@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, Twitter } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 
 export function Footer() {
@@ -27,7 +27,8 @@ export function Footer() {
                     {/* Social Links */}
                     <div className="flex gap-6">
                         <SocialLink href="https://linkedin.com/in/carlomatic" icon={Linkedin} label="LinkedIn" />
-                        <SocialLink href="http://github.com/carlomatic" icon={Github} label="GitHub" />
+                        <SocialLink href="https://www.instagram.com/carlomatic/" icon={Instagram} label="Instagram" />
+                        <SocialLink href="https://www.facebook.com/carlo.matic78" icon={Facebook} label="Facebook" />
                         <SocialLink href="https://twitter.com/carlomatic" icon={Twitter} label="Twitter" />
                         <SocialLink
                             onClick={() => {
