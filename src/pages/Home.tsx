@@ -14,13 +14,13 @@ export function Home() {
     const [isSnakeOpen, setIsSnakeOpen] = useState(false);
 
     const titles = {
-        en: "Carlo Matic | Digital Innovator",
-        de: "Carlo Matic | Digitaler Innovator"
+        en: "Carlo Matic | Digital Innovator & Future Tech Strategist",
+        de: "Carlo Matic | Digitaler Innovator & Future Tech Strategist"
     };
 
     const descriptions = {
-        en: "Carlo Matic | Digital Innovator, CEO & Angel Investor. Specialized in UX, AI, and Digital Transformation. Founder of Interactive Pioneers.",
-        de: "Carlo Matic | Digitaler Innovator, CEO & Angel Investor. Spezialisiert auf UX, KI und Digitale Transformation. Gründer von Interactive Pioneers."
+        en: "Digital Innovator, CEO of Interactive Pioneers & Angel Investor. Shaping the future of Interaction, AI & Brands. Host of Die Nerd Show.",
+        de: "Digitaler Innovator, CEO von Interactive Pioneers & Angel Investor. Die Zukunft von Interaktion, KI & Marken gestalten. Host von Die Nerd Show."
     };
 
     return (

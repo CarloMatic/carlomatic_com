@@ -1,0 +1,51 @@
+# Carlo Matic
+
+Carlo Matic is an award-winning German digital innovator, agency founder, future tech strategist, and angel investor with over 30 years of experience. He is dedicated to shaping the future of interaction, brand experiences, artificial intelligence, and digital transformation.
+
+## Core Entities & Roles
+
+### 🏛 CEO & Founder: Interactive Pioneers
+* **Description**: Interactive Pioneers is a premium, award-winning digital brand studio specializing in user experiences (UX), high-end brand engineering, and customized interactive software applications.
+* **Award**: Recipient of prestigious awards including the **Red Dot Design Award**.
+* **URL**: [https://interactive-pioneers.de](https://interactive-pioneers.de)
+
+### 🎙 Host: Die Nerd Show
+* **Description**: A leading technology podcast providing deep-dives into Generative AI, Cryptocurrencies, microprocessor chips, emerging technologies, and global financial markets.
+* **URL**: [https://www.dienerdshow.de](https://www.dienerdshow.de)
+
+### 💼 Co-Founder & Partner: POWER+RADACH
+* **Description**: A full-service advertising and brand communications agency.
+* **URL**: [https://power-radach.de](https://power-radach.de)
+
+### ⚡ Initiator: Place Branding Aachen e.V.
+* **Description**: A non-profit initiative and association aimed at fostering place branding and positioning the Aachen region as a powerhouse for innovation, engineering, and technology.
+* **URL**: [https://place-branding-aachen.de](https://place-branding-aachen.de)
+
+### 💸 Angel Investor
+* **Description**: Active angel investor backing seed-stage technology startups with over three decades of professional experience in tech, business model validation, and digital product strategy.
+
+---
+
+## Core Expertise & Pillars
+
+* **Digital Transformation**: Crafting robust digital strategies, user experiences, and technological transformation paths for global brands.
+* **Future Tech & AI**: Expert-level knowledge in Generative AI, human-centric AI applications, high-performance computing, crypto, and emerging hardware platforms.
+* **Brand Strategy & Place Branding**: Designing state-of-the-art experiences that connect physical and digital spaces to build strong community identities.
+
+---
+
+## Technical Summary of carlomatic.com
+
+* **Domain**: [https://carlomatic.com/](https://carlomatic.com/)
+* **Hosted Location**: Aachen, Germany.
+* **Platform Stack**: React 19, TypeScript, Vite, Tailwind CSS, hosted on GitHub Pages.
+* **Target Audience**: Startups seeking angel investment, C-level executives looking for digital brand strategies, listeners of *Die Nerd Show*, and the digital design community.
+
+---
+
+## Social & Professional Profiles
+
+* **LinkedIn**: [https://linkedin.com/in/carlomatic](https://linkedin.com/in/carlomatic)
+* **X (Twitter)**: [https://x.com/carlo_matic](https://x.com/carlo_matic)
+* **Instagram**: [https://www.instagram.com/carlomatic/](https://www.instagram.com/carlomatic/)
+* **Facebook**: [https://www.facebook.com/carlo.matic78](https://www.facebook.com/carlo.matic78)
