@@ -4,6 +4,8 @@ import { ArrowLeft } from 'lucide-react';
 import { ParticleBackground } from '../components/ParticleBackground';
 import { useLanguage } from '../hooks/useLanguage';
 
+import { SEO } from '../components/SEO';
+
 export function Imprint() {
     const navigate = useNavigate();
     const { language } = useLanguage();
@@ -11,6 +13,7 @@ export function Imprint() {
     const content = {
         en: {
             title: 'Imprint',
+            seoTitle: 'Imprint | Carlo Matic',
             tmgTitle: 'Information according to § 5 TMG',
             contactTitle: 'Contact',
             responsibleTitle: 'Responsible for content according to § 55 Abs. 2 RStV',
@@ -21,6 +24,7 @@ export function Imprint() {
         },
         de: {
             title: 'Impressum',
+            seoTitle: 'Impressum | Carlo Matic',
             tmgTitle: 'Angaben gemäß § 5 TMG',
             contactTitle: 'Kontakt',
             responsibleTitle: 'Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV',
@@ -33,6 +37,7 @@ export function Imprint() {
 
     return (
         <main className="w-full min-h-screen bg-brand-acc text-gray-900 relative">
+            <SEO title={content[language].seoTitle} description={content[language].disclaimerText} />
             <ParticleBackground />
 
             <div className="max-w-4xl mx-auto px-4 py-16 relative z-10">

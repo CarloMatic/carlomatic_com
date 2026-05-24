@@ -8,10 +8,23 @@ export const ventures = [
         description: { en: 'Digital Brand Studio building premium user experiences and digital value for global brands.', de: 'Digital Brand Studio für erstklassige Nutzererlebnisse und digitale Wertschöpfung für globale Marken.' },
         icon: Globe,
         link: 'https://interactive-pioneers.de',
-        size: 'large', // Spans 2 cols
+        size: 'medium',
         color: 'from-blue-500/20 to-purple-500/20',
-        image: 'ipbackground.webp',
-        iconImage: 'ip-logo.webp'
+        image: 'interactive-pioneers-digital-brand-studio-background.webp',
+        iconImage: 'interactive-pioneers-logo-white.webp'
+    },
+    {
+        id: 'place-branding-aachen',
+        title: 'Place Branding Aachen e.V.',
+        role: { en: 'Initiator & Chairman', de: 'Initiator & Vorstandsvorsitzender' },
+        description: { en: 'Our entrepreneurial initiative for a powerful city brand. Aachen Without Limits.', de: 'Unsere Unternehmer-Initiative für eine wirksame Standortmarke. Aachen Ohne Limits.' },
+        icon: Globe,
+        link: 'https://www.aachenohnelimits.de/',
+        size: 'medium',
+        color: 'from-purple-500/20 to-fuchsia-500/20',
+        image: 'pba-infinity-bg.png',
+        bgContain: true,
+        iconImage: 'place-branding-aachen-logo.png'
     },
     {
         id: 'drehturm',
@@ -22,7 +35,7 @@ export const ventures = [
         link: 'https://www.drehturm.de',
         size: 'medium',
         color: 'from-yellow-500/20 to-amber-500/20',
-        image: 'drehturm-belvedere.webp'
+        image: 'drehturm-belvedere-aachen-landmark.webp'
     },
     {
         id: 'construction',

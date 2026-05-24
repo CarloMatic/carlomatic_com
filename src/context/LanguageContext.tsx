@@ -1,32 +1,27 @@
-import { useState, useEffect, type ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { LanguageContext, type Language } from './LanguageContextDefinition';
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
     const [searchParams, setSearchParams] = useSearchParams();
 
-    // Initialize state lazily to avoid effect update
-    const [language, setLanguageState] = useState<Language>(() => {
-        const langParam = new URLSearchParams(window.location.search).get('lang');
-        if (langParam === 'de' || langParam === 'en') return langParam;
-
+    // Internal state for when no URL param is present
+    const [internalLanguage, setInternalLanguage] = useState<Language>(() => {
         const hostname = window.location.hostname;
         if (hostname.endsWith('.de')) return 'de';
+
+        const browserLang = navigator.language.toLowerCase();
+        if (browserLang.startsWith('de')) return 'de';
 
         return 'en';
     });
 
-    // Sync state with URL params if they change externally (back/forward)
-    useEffect(() => {
-        const langParam = searchParams.get('lang');
-        if ((langParam === 'de' || langParam === 'en') && langParam !== language) {
-            // eslint-disable-next-line react-hooks/set-state-in-effect
-            setLanguageState(langParam);
-        }
-    }, [searchParams, language]);
+    // Derived state: URL param takes precedence
+    const langParam = searchParams.get('lang');
+    const language = (langParam === 'de' || langParam === 'en') ? langParam : internalLanguage;
 
     const setLanguage = (lang: Language) => {
-        setLanguageState(lang);
+        setInternalLanguage(lang);
         setSearchParams({ lang });
     };
 

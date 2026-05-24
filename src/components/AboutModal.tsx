@@ -52,10 +52,15 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                         className="fixed inset-0 z-50 flex items-center justify-center p-4"
                         onClick={(e) => e.stopPropagation()} // Prevent closing when clicking modal
                     >
-                        <div className="bg-white rounded-[32px] max-w-2xl w-full p-8 md:p-12 shadow-2xl relative overflow-hidden border border-white/20">
+                        <div
+                            role="dialog"
+                            aria-modal="true"
+                            className="bg-white rounded-[32px] max-w-2xl w-full p-8 md:p-12 shadow-2xl relative overflow-hidden border border-white/20"
+                        >
 
                             {/* Close Button */}
                             <button
+                                aria-label="Close"
                                 onClick={onClose}
                                 className="absolute top-6 right-6 p-2 rounded-full hover:bg-gray-100 transition-colors text-gray-400 hover:text-gray-900"
                             >

@@ -6,7 +6,7 @@ import { useLanguage } from '../hooks/useLanguage';
 export function BentoGrid() {
     const { language } = useLanguage();
     return (
-        <section id="ventures" className="py-24 px-4 w-full max-w-7xl mx-auto relative z-10">
+        <section id="ventures" className="pt-24 pb-0 px-4 w-full max-w-7xl mx-auto relative z-10">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -42,10 +42,13 @@ export function BentoGrid() {
                         {'image' in venture && (
                             <>
                                 <div
-                                    className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                                    className={`absolute inset-0 z-0 bg-center transition-transform duration-700 group-hover:scale-105 ${'bgContain' in venture && venture.bgContain ? 'bg-contain bg-no-repeat' : 'bg-cover'}`}
                                     style={{ backgroundImage: `url('${import.meta.env.BASE_URL}${venture.image}')` }}
                                 />
-                                <div className="absolute inset-0 z-10 bg-white/80 group-hover:bg-white/70 transition-colors duration-300" />
+                                {'darkOverlay' in venture && venture.darkOverlay
+                                    ? <div className="absolute inset-0 z-10 bg-black/60 group-hover:bg-black/50 transition-colors duration-300" />
+                                    : <div className="absolute inset-0 z-10 bg-white/80 group-hover:bg-white/70 transition-colors duration-300" />
+                                }
                             </>
                         )}
 
@@ -67,9 +70,9 @@ export function BentoGrid() {
                                 </div>
                             </div>
 
-                            <h3 className="text-2xl font-bold mb-2 text-gray-900">{venture.title}</h3>
+                            <h3 className={`text-2xl font-bold mb-2 ${'darkOverlay' in venture && venture.darkOverlay ? 'text-white' : 'text-gray-900'}`}>{venture.title}</h3>
                             <p className="text-xs font-bold text-brand-neon mb-4 uppercase tracking-wider">{venture.role[language]}</p>
-                            <p className={`${'image' in venture ? 'text-gray-800' : 'text-gray-500'} leading-relaxed`}>
+                            <p className={`${'darkOverlay' in venture && venture.darkOverlay ? 'text-white/80' : 'image' in venture ? 'text-gray-800' : 'text-gray-500'} leading-relaxed`}>
                                 {venture.description[language]}
                             </p>
                         </div>

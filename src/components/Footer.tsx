@@ -8,13 +8,16 @@ const XLogo = ({ size = 20 }: { size?: number }) => (
     </svg>
 );
 
-export function Footer() {
+import { useCookieContext } from '../context/CookieContext';
+
+export function Footer({ onOpenSnake }: { onOpenSnake?: () => void }) {
     const currentYear = new Date().getFullYear();
     const { language, setLanguage } = useLanguage();
+    const { setCookieConsent } = useCookieContext();
 
     const labels = {
-        en: { imprint: 'Imprint', privacy: 'Privacy' },
-        de: { imprint: 'Impressum', privacy: 'Datenschutz' }
+        en: { imprint: 'Imprint', privacy: 'Privacy', cookies: 'Cookies' },
+        de: { imprint: 'Impressum', privacy: 'Datenschutz', cookies: 'Cookies' }
     };
 
     return (
@@ -23,7 +26,10 @@ export function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
 
                     {/* Brand */}
-                    <div className="text-center md:text-left space-y-2">
+                    <div
+                        className="text-center md:text-left space-y-2 cursor-pointer hover:opacity-80 transition-opacity"
+                        onClick={onOpenSnake}
+                    >
                         <h3 className="text-2xl font-bold tracking-tight text-gray-900">
                             CARLO <span className="text-brand-neon">MATIC</span>
                         </h3>
@@ -56,6 +62,8 @@ export function Footer() {
                         <a href="#/imprint" className="hover:text-brand-neon transition-colors">{labels[language].imprint}</a>
                         <span className="mx-2"> | </span>
                         <a href="#/privacy" className="hover:text-brand-neon transition-colors">{labels[language].privacy}</a>
+                        <span className="mx-2"> | </span>
+                        <button onClick={() => setCookieConsent(null)} className="hover:text-brand-neon transition-colors">{labels[language].cookies}</button>
                     </p>
 
                     {/* Language Switch */}
