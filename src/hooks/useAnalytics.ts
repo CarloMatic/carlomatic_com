@@ -16,8 +16,13 @@ export function useAnalytics() {
 
                 if (GA_MEASUREMENT_ID) {
                     console.log("[Analytics] Initializing GA4 with ID:", GA_MEASUREMENT_ID);
-                    ReactGA.initialize(GA_MEASUREMENT_ID);
-                    gaInitialized = true;
+                    try {
+                        ReactGA.initialize(GA_MEASUREMENT_ID);
+                        gaInitialized = true;
+                        console.log("[Analytics] GA4 Initialized successfully");
+                    } catch (error) {
+                        console.error("[Analytics] Error during GA4 initialization:", error);
+                    }
                 } else {
                     console.warn('[Analytics] GA4 Measurement ID not found in environment variables (VITE_GA_MEASUREMENT_ID)');
                 }
@@ -26,7 +31,12 @@ export function useAnalytics() {
             if (gaInitialized) {
                 const pagePath = location.pathname + location.search;
                 console.log("[Analytics] Sending pageview for path:", pagePath);
-                ReactGA.send({ hitType: "pageview", page: pagePath });
+                try {
+                    ReactGA.send({ hitType: "pageview", page: pagePath });
+                    console.log("[Analytics] Pageview sent successfully");
+                } catch (error) {
+                    console.error("[Analytics] Error sending pageview:", error);
+                }
             }
         } else {
             console.log("[Analytics] Cookie consent state is:", cookieConsent, "- GA4 tracking inactive");
