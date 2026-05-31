@@ -15,16 +15,21 @@ export function useAnalytics() {
                 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
 
                 if (GA_MEASUREMENT_ID) {
+                    console.log("[Analytics] Initializing GA4 with ID:", GA_MEASUREMENT_ID);
                     ReactGA.initialize(GA_MEASUREMENT_ID);
                     gaInitialized = true;
                 } else {
-                    console.warn('GA4 Measurement ID not found in environment variables (VITE_GA_MEASUREMENT_ID)');
+                    console.warn('[Analytics] GA4 Measurement ID not found in environment variables (VITE_GA_MEASUREMENT_ID)');
                 }
             }
 
             if (gaInitialized) {
-                ReactGA.send({ hitType: "pageview", page: location.pathname + location.search });
+                const pagePath = location.pathname + location.search;
+                console.log("[Analytics] Sending pageview for path:", pagePath);
+                ReactGA.send({ hitType: "pageview", page: pagePath });
             }
+        } else {
+            console.log("[Analytics] Cookie consent state is:", cookieConsent, "- GA4 tracking inactive");
         }
     }, [cookieConsent, location]);
 }
