@@ -174,6 +174,10 @@ export function SnakeGame({ onClose }: SnakeGameProps) {
                         src={`${import.meta.env.BASE_URL}images/nokia-3310-snake-game-retro.webp`}
                         alt="Nokia 3310 Retro Phone Frame for Snake Game"
                         className="w-full h-full object-contain drop-shadow-2xl"
+                        loading="lazy"
+                        decoding="async"
+                        width="960"
+                        height="1765"
                     />
 
                     {/* LCD Screen Container - Refined Positioning for 84x48 ratio feel */}

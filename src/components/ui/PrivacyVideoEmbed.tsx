@@ -37,6 +37,10 @@ export function PrivacyVideoEmbed({ videoId, title, className = '' }: PrivacyVid
                 src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
                 alt={`Play ${title}`}
                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                loading="lazy"
+                decoding="async"
+                width="1280"
+                height="720"
             />
 
             {/* Play Button Overlay */}

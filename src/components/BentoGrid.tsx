@@ -60,6 +60,10 @@ export function BentoGrid() {
                                             src={`${import.meta.env.BASE_URL}${venture.iconImage}`}
                                             alt="Logo"
                                             className="h-8 w-auto opacity-70 group-hover:opacity-100 transition-opacity"
+                                            loading="lazy"
+                                            decoding="async"
+                                            width="100"
+                                            height="100"
                                         />
                                     ) : (
                                         <venture.icon size={32} strokeWidth={1.5} />

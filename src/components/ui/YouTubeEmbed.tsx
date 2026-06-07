@@ -60,6 +60,10 @@ export function YouTubeEmbed({ videoId, title, className = '', thumbnailSrc }: Y
                 src={thumbnailSrc || `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
                 alt={`Play ${title}`}
                 className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-500"
+                loading="lazy"
+                decoding="async"
+                width="1280"
+                height="720"
             />
 
             {/* Content Overlay */}

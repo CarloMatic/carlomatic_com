@@ -129,6 +129,7 @@ export function Hero({ language: propLanguage, onOpenSnake }: HeroProps = {}) {
                         className="h-8 w-auto opacity-70 invert group-hover:invert-0 group-hover:opacity-100 group-hover:brightness-0 transition-all duration-300"
                         width="200"
                         height="50"
+                        decoding="async"
                     />
 
                     <div className="mt-4">
@@ -154,12 +155,15 @@ export function Hero({ language: propLanguage, onOpenSnake }: HeroProps = {}) {
                     className="md:col-span-1 forma-panel rounded-3xl relative border border-gray-200 cursor-pointer group/nerd overflow-hidden min-h-[300px]"
                     onClick={() => window.open('https://www.dienerdshow.de', '_blank', 'noopener,noreferrer')}
                 >
-                    {/* Background Image */}
-                    <div
-                        className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover/nerd:scale-105"
-                        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}die-nerd-show-podcast-cover-carlo-matic.webp')` }}
-                        aria-label="Die Nerd Show - Podcast Cover with Carlo Matic"
-                        role="img"
+                    {/* Background Image - Semantic & Lazy Loaded */}
+                    <img
+                        src={`${import.meta.env.BASE_URL}die-nerd-show-podcast-cover-carlo-matic.webp`}
+                        alt="Die Nerd Show - Podcast Cover with Carlo Matic"
+                        className="absolute inset-0 z-0 w-full h-full object-cover transition-transform duration-700 group-hover/nerd:scale-105"
+                        loading="lazy"
+                        decoding="async"
+                        width="600"
+                        height="600"
                     />
                     <div className="absolute inset-0 z-10 bg-white/80 group-hover/nerd:bg-white/70 transition-colors duration-300" />
 

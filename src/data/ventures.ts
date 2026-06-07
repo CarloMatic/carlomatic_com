@@ -24,7 +24,7 @@ export const ventures = [
         color: 'from-purple-500/20 to-fuchsia-500/20',
         image: 'pba-infinity-bg.png',
         bgContain: true,
-        iconImage: 'place-branding-aachen-logo.png'
+        iconImage: 'place-branding-aachen-logo.webp'
     },
     {
         id: 'drehturm',

@@ -68,6 +68,10 @@ export function SpotifyEmbed({ episodeId, title, className = '', thumbnailSrc }:
                     src={thumbnailSrc}
                     alt={`Play ${title}`}
                     className="h-full w-auto rounded-xl shadow-lg group-hover:scale-105 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 z-10 mr-6"
+                    loading="lazy"
+                    decoding="async"
+                    width="150"
+                    height="150"
                 />
 
                 {/* Text Content */}

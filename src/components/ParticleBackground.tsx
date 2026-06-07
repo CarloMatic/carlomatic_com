@@ -15,7 +15,8 @@ export function ParticleBackground() {
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
-        let animationFrameId: number;
+        let animationFrameId: number | null = null;
+        let isAnimating = false;
         const particles: Particle[] = [];
 
         // Configuration
@@ -32,9 +33,6 @@ export function ParticleBackground() {
         };
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
-
-        // Particle class moved outside
-
 
         // Initialize
         for (let i = 0; i < particleCount; i++) {
@@ -74,11 +72,46 @@ export function ParticleBackground() {
             animationFrameId = requestAnimationFrame(animate);
         };
 
-        animate();
+        const startAnimation = () => {
+            if (!isAnimating) {
+                isAnimating = true;
+                animate();
+            }
+        };
+
+        const stopAnimation = () => {
+            if (isAnimating) {
+                isAnimating = false;
+                if (animationFrameId !== null) {
+                    cancelAnimationFrame(animationFrameId);
+                    animationFrameId = null;
+                }
+            }
+        };
+
+        // Pause/resume loop when not in viewport (crucial for scroll performance & battery/CPU metrics)
+        let observer: IntersectionObserver | null = null;
+        if ('IntersectionObserver' in window) {
+            observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        startAnimation();
+                    } else {
+                        stopAnimation();
+                    }
+                });
+            }, { threshold: 0.01 });
+            observer.observe(canvas);
+        } else {
+            startAnimation();
+        }
 
         return () => {
             window.removeEventListener('resize', resizeCanvas);
-            cancelAnimationFrame(animationFrameId);
+            if (observer) {
+                observer.disconnect();
+            }
+            stopAnimation();
         };
     }, []);
 
