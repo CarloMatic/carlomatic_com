@@ -6,6 +6,8 @@ export function VideoGrid() {
     const videos = [
         { id: 'JuOFBOZCe_0', title: 'Video 1' },
         { id: 'DFxE53MLk8c', title: 'Video 2' },
+        { id: '9mKtXGiV92I', title: 'Aachen ohne Limits' },
+        { id: 'uqrM-serb54', title: 'Vortrag Erstvorstellung Standortmarke "Aachen ohne Limits" im Digital Hub Aachen' },
         { id: 'qpEKbOyfhC4', title: 'Video 3' },
         { id: 'IeJMcCOKCKY', title: 'Carlo Matic - Ist er der vierte Samwer-Bruder?' }
     ];
